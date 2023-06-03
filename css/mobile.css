@@ -348,11 +348,7 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    filter:grayscale(1);
-    transition:0.5s;
 }
-
-.main:hover ~ div #video { filter:grayscale(0); transition:0.5s; }
 
 
 
