@@ -352,7 +352,7 @@ body {
     transition:0.5s;
 }
 
-.main_wrap:hover ~ div #video { filter:grayscale(0); transition:0.5s; }
+.main:hover ~ div #video { filter:grayscale(0); transition:0.5s; }
 
 
 
