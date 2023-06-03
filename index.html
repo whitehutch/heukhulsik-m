@@ -19,7 +19,8 @@
     <meta property="og:url" content="https://whitehutch.github.io/m.heukhulsik/" />
     <meta property="og:image" content="https://thumbs2.imgbox.com/80/a3/soSxUE7K_t.png" />
     <meta property="og:description" content="흑헐식은 편안함을 안겨주는 무드로 항상 이곳에 자리하고 있습니다." />
-    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css" />
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css" />
     <script>
         $(document).ready(function () {
             $('.btn_wrap div>label').on("click", function () {
@@ -35,15 +36,15 @@
     </script>
     <script>
         $(document).ready(function () {
-                let roller = document.querySelector('.roller');
-                roller.id = 'roller1';
-                let clone = roller.cloneNode(true);
-                clone.id = 'roller2';
-                document.querySelector('.ad_wrap').appendChild(clone);
-                document.querySelector('#roller1').style.left = '0px';
-                document.querySelector('#roller2').style.left = document.querySelector('.roller ul').offsetWidth + 'px';
-                roller.classList.add('original');
-                clone.classList.add('clone');
+            let roller = document.querySelector('.roller');
+            roller.id = 'roller1';
+            let clone = roller.cloneNode(true);
+            clone.id = 'roller2';
+            document.querySelector('.ad_wrap').appendChild(clone);
+            document.querySelector('#roller1').style.left = '0px';
+            document.querySelector('#roller2').style.left = document.querySelector('.roller ul').offsetWidth + 'px';
+            roller.classList.add('original');
+            clone.classList.add('clone');
         });
     </script>
     <script>
@@ -83,14 +84,14 @@
             }
             function applySlideStyles() {
                 $('.slider li').css({
-                    filter:'grayscale(1)',
+                    filter: 'grayscale(1)',
                     opacity: '0.4',
                     position: 'relative',
                     left: '0'
                 });
                 var centerIndex = Math.floor((slideCount + 8) / 4);
                 $('.slider li').eq(centerIndex).css({
-                    filter:'grayscale(0)',
+                    filter: 'grayscale(0)',
                     opacity: '1'
                 });
             }
@@ -112,34 +113,33 @@
         });
     </script>
     <script>
-      $(document).ready(function() {
-      });
+        $(document).ready(function () {
+        });
     </script>
     <script>
         $(function ($) {
-                // 로딩 페이지 보이기
-                var loadingPage = $('<div class="loading_page"><div class="loading_wrap"><img class="loading_logo" src="images/loading_logo.png" alt="Loading Logo"><div class="loading_text"><img src="images/loading_text.png" alt="Loading Logo"></div></div></div>');
-                $('body').append(loadingPage);
-                loadingPage.css("display", "static");
-                loadingPage.delay(2000).fadeOut(1000);
+            // 로딩 페이지 보이기
+            var loadingPage = $('<div class="loading_page"><div class="loading_wrap"><img class="loading_logo" src="images/loading_logo.png" alt="Loading Logo"><div class="loading_text"><img src="images/loading_text.png" alt="Loading Logo"></div></div></div>');
+            $('body').append(loadingPage);
+            loadingPage.css("display", "static");
+            loadingPage.delay(2000).fadeOut(1000);
 
-                // 특정 요소를 제외한 <a> 요소에 클릭 이벤트 바인딩
-                $("a:not(#exclude-link)").click(function (event) {
-                    event.preventDefault();
-                    var linkLocation = this.href;
-                    loadingPage.fadeIn(2000, function () {
-                        redirectPage(linkLocation);
-                    });
+            // 특정 요소를 제외한 <a> 요소에 클릭 이벤트 바인딩
+            $("a:not(#exclude-link)").click(function (event) {
+                event.preventDefault();
+                var linkLocation = this.href;
+                loadingPage.fadeIn(2000, function () {
+                    redirectPage(linkLocation);
                 });
-
-                function redirectPage(linkLocation) {
-                    window.location.href = linkLocation;
-                }
             });
+
+            function redirectPage(linkLocation) {
+                window.location.href = linkLocation;
+            }
+        });
     </script>
 
     <style>
-
         .loading_page {
             z-index: 999999;
             position: fixed;
@@ -154,18 +154,28 @@
             justify-content: center;
             align-items: center;
         }
-        
+
         .loading_wrap {
-            margin-top:25px;
+            margin-top: 25px;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
-        .loading_logo { position:absolute; width:150px; animation: rotate_image 5s linear infinite; }
-        .loading_text { margin-top:-20px; }
-        .loading_text img { width:190px; animation: rotate_image 10s linear infinite; }
+        .loading_logo {
+            position: absolute;
+            width: 150px;
+            animation: rotate_image 5s linear infinite;
+        }
 
+        .loading_text {
+            margin-top: -20px;
+        }
+
+        .loading_text img {
+            width: 190px;
+            animation: rotate_image 10s linear infinite;
+        }
     </style>
     <script>
         $(function ($) {
@@ -184,32 +194,32 @@
                 tempInput.remove();
             }
         });
-  </script>
-  <script>
-    $(function ($) {
-        $(".footer_map .adress a").click(function (event) {
-            event.preventDefault();
-            var address = "부산광역시 부산진구 서전로 37번길 18 2층";
-            // 복사 로직 구현
-            copyToClipboard(address);
-        });
+    </script>
+    <script>
+        $(function ($) {
+            $(".footer_map .adress a").click(function (event) {
+                event.preventDefault();
+                var address = "부산광역시 부산진구 서전로 37번길 18 2층";
+                // 복사 로직 구현
+                copyToClipboard(address);
+            });
 
-        // 이하 함수들은 이전에 설명한 코드와 동일합니다.
-        function copyToClipboard(text) {
-            var tempInput = $("<input>");
-            $("body").append(tempInput);
-            tempInput.val(text).select();
-            document.execCommand("copy");
-            tempInput.remove();
-        }
-    });
+            // 이하 함수들은 이전에 설명한 코드와 동일합니다.
+            function copyToClipboard(text) {
+                var tempInput = $("<input>");
+                $("body").append(tempInput);
+                tempInput.val(text).select();
+                document.execCommand("copy");
+                tempInput.remove();
+            }
+        });
     </script>
     <script>
         $(document).ready(function () {
-                $('.logo').click(function () {
-                    $('.menu').slideToggle(1000); // 3초(3000ms) 동안 슬라이드 토글
-                });
+            $('.logo').click(function () {
+                $('.menu').slideToggle(1000); // 3초(3000ms) 동안 슬라이드 토글
             });
+        });
     </script>
 </head>
 
@@ -221,7 +231,8 @@
                 <ul>
                     <li>
                         ｜ OPEN EVENT ｜ 인스타그램 스토리에 <b>about</b>을 캡처하여 공유해주시면 디저트 중 하나를 무료로 드립니다.
-                         ｜ OPEN EVENT ｜ if you capture and share <b>about tab</b> in your instagram story, we will give you one of the dessert. &nbsp;
+                        ｜ OPEN EVENT ｜ if you capture and share <b>about tab</b> in your instagram story, we will give
+                        you one of the dessert. &nbsp;
                     </li>
                 </ul>
             </div>
@@ -263,47 +274,83 @@
 
     <div class="main">
         <div class="main_wrap"></div>
-        <div style="width:100%;height:0px;position:relative;padding-bottom:178.218%;"><iframe src="https://streamable.com/e/mx746n?autoplay=1&nocontrols=1" frameborder="0" width="100%" height="100%" allowfullscreen allow="autoplay" style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden;"></iframe></div>
+        <div style="width:100%;height:0px;position:relative;padding-bottom:178.218%;" id="area"><iframe width="560"
+                height="840"
+                src="https://www.youtube.com/embed/b8XyO5a-Xf4?autoplay=1&mute=1&controls=0&loop=1&playlist=b8XyO5a-Xf4"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                id="video"></iframe></div>
     </div>
 
-<!-- Code injected by live-server -->
-<script>
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function () {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					var parent = elem.parentElement || head;
-					parent.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					parent.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function (msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
-				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-			}
-		})();
-	}
-	else {
-		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-	}
+    <script src="https://www.youtube.com/iframe_api"></script>
+
+    <script>
+        var player;
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player1', {
+                videoId: 'aBcDEFGh3IJ', //유튭 영상ID
+                playerVars: {
+                    'autoplay': 1, //자동재생
+                    'rel': 0,
+                    'showinfo': 0,
+                    'modestbranding': 0,
+                    'playsinline': 0,
+                    'rel': 0,
+                    'controls': 0,	//youtube 콘트롤 표시
+                    'color': 'white',
+                    'loop': 1, //반복 여부  
+                },
+                events: {
+                    'onReady': onPlayerReady,
+                }
+            });
+        }
+
+        function onPlayerReady(event) {
+            player.playVideo();
+            player.mute(); //자동재생하려면 mute해야함
+        }
+
+    </script>
+
+    <!-- Code injected by live-server -->
+    <script>
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        }
+        else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
 	// ]]>
-</script>
+    </script>
 </body>
 
 </html>
