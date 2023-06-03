@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="Googlebot" content="noindex, nofollow">
+    <meta name="Naverbot" content="noindex, nofollow">
+    <meta name="Daumoa" content="noindex, nofollow">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>黑歇息</title>
+    <link rel="stylesheet" href="./css/mobile.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="http://fatlinesofcode.github.io/jquery.smoothwheel/src/jquery.smoothwheel.js"></script>
+    <script src="https://kit.fontawesome.com/6a7f0abbbd.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css" rel="stylesheet">
+    <meta property="og:title" content="黑歇息" />
+    <meta property="og:url" content="https://whitehutch.github.io/heukhulsik/" />
+    <meta property="og:image" content="https://thumbs2.imgbox.com/80/a3/soSxUE7K_t.png" />
+    <meta property="og:description" content="흑헐식은 편안함을 안겨주는 무드로 항상 이곳에 자리하고 있습니다." />
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css" />
+    <script>
+        $(document).ready(function () {
+            $('.btn_wrap div>label').on("click", function () {
+                $('.btn_wrap div>label').css({ 'background-color': '#000000', 'color': '#ffffff', 'transition': '0.5s' });
+                $(this).css({ 'background-color': '#ffffff', 'color': '#000', 'transition': '0.5s' });
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("body").smoothWheel()
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+                let roller = document.querySelector('.roller');
+                roller.id = 'roller1';
+                let clone = roller.cloneNode(true);
+                clone.id = 'roller2';
+                document.querySelector('.ad_wrap').appendChild(clone);
+                document.querySelector('#roller1').style.left = '0px';
+                document.querySelector('#roller2').style.left = document.querySelector('.roller ul').offsetWidth + 'px';
+                roller.classList.add('original');
+                clone.classList.add('clone');
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            var slideCount = $('.slider li').length;
+            var slideWidth = $('.slider li').outerWidth();
+            var slideHeight = $('.slider li').outerHeight();
+            var sliderUlWidth = slideCount * slideWidth;
+            $('.bev_list').css({ width: slideWidth, height: slideHeight });
+            $('.slider').css({ width: sliderUlWidth, marginLeft: -slideWidth * 3.908, textAlign: 'center' });
+            function moveLeft() {
+                ;
+                $('.slider').animate(
+                    {
+                        left: slideWidth * 0.8
+                    },
+                    700,
+                    function () {
+                        $('.slider li:last-child').prependTo('.slider');
+                        $('.slider').css('left', '');
+                        applySlideStyles();
+                    }
+                );
+            }
+            function moveRight() {
+                $('.slider').animate(
+                    {
+                        left: -slideWidth * 0.8
+                    },
+                    700,
+                    function () {
+                        $('.slider li:first-child').appendTo('.slider');
+                        $('.slider').css('left', '');
+                        applySlideStyles();
+                    }
+                );
+            }
+            function applySlideStyles() {
+                $('.slider li').css({
+                    filter:'grayscale(1)',
+                    opacity: '0.4',
+                    position: 'relative',
+                    left: '0'
+                });
+                var centerIndex = Math.floor((slideCount + 8) / 4);
+                $('.slider li').eq(centerIndex).css({
+                    filter:'grayscale(0)',
+                    opacity: '1'
+                });
+            }
+            $('.left').click(function () {
+                moveLeft();
+            });
+            $('.right').click(function () {
+                moveRight();
+            });
+            applySlideStyles();
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                var scrollValue = $(document).scrollTop();
+                console.log(scrollValue);
+            });
+        });
+    </script>
+    <script>
+      $(document).ready(function() {
+      });
+    </script>
+    <script>
+        $(function ($) {
+                // 로딩 페이지 보이기
+                var loadingPage = $('<div class="loading_page"><div class="loading_wrap"><img class="loading_logo" src="images/loading_logo.png" alt="Loading Logo"><div class="loading_text"><img src="images/loading_text.png" alt="Loading Logo"></div></div></div>');
+                $('body').append(loadingPage);
+                loadingPage.css("display", "static");
+                loadingPage.delay(2000).fadeOut(1000);
+
+                // 특정 요소를 제외한 <a> 요소에 클릭 이벤트 바인딩
+                $("a:not(#exclude-link)").click(function (event) {
+                    event.preventDefault();
+                    var linkLocation = this.href;
+                    loadingPage.fadeIn(2000, function () {
+                        redirectPage(linkLocation);
+                    });
+                });
+
+                function redirectPage(linkLocation) {
+                    window.location.href = linkLocation;
+                }
+            });
+    </script>
+
+    <style>
+
+        .loading_page {
+            z-index: 999999;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .loading_wrap {
+            margin-top:25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .loading_logo { position:absolute; width:150px; animation: rotate_image 5s linear infinite; }
+        .loading_text { margin-top:-20px; }
+        .loading_text img { width:190px; animation: rotate_image 10s linear infinite; }
+
+    </style>
+    <script>
+        $(function ($) {
+            $(".footer_map .tel a").click(function (event) {
+                event.preventDefault();
+                var phoneNumber = $(this).text();
+                // 복사 로직 구현
+                copyToClipboard(phoneNumber);
+            });
+
+            function copyToClipboard(text) {
+                var tempInput = $("<input>");
+                $("body").append(tempInput);
+                tempInput.val(text).select();
+                document.execCommand("copy");
+                tempInput.remove();
+            }
+        });
+  </script>
+  <script>
+    $(function ($) {
+        $(".footer_map .adress a").click(function (event) {
+            event.preventDefault();
+            var address = "부산광역시 부산진구 서전로 37번길 18 2층";
+            // 복사 로직 구현
+            copyToClipboard(address);
+        });
+
+        // 이하 함수들은 이전에 설명한 코드와 동일합니다.
+        function copyToClipboard(text) {
+            var tempInput = $("<input>");
+            $("body").append(tempInput);
+            tempInput.val(text).select();
+            document.execCommand("copy");
+            tempInput.remove();
+        }
+    });
+    </script>
+    <script>
+        $(document).ready(function () {
+                $('.logo').click(function () {
+                    $('.menu').slideToggle(1000); // 3초(3000ms) 동안 슬라이드 토글
+                });
+            });
+    </script>
+</head>
+
+<body oncontextmenu='return false' onselectstart='return false' ondragstart='return false'>
+
+    <div id="ad">
+        <div class="ad_wrap">
+            <div class="roller">
+                <ul>
+                    <li>
+                        ｜ OPEN EVENT ｜ 인스타그램 스토리에 <b>about</b>을 캡처하여 공유해주시면 디저트 중 하나를 무료로 드립니다.
+                         ｜ OPEN EVENT ｜ if you capture and share <b>about tab</b> in your instagram story, we will give you one of the dessert. &nbsp;
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="header">
+        <div class="header_wrap">
+            <div class="logo">
+                <img src="images/header_logo.png" alt="">
+            </div>
+        </div>
+        <div class="menu">
+            <div class="bridge">
+                <a href=""><img src="images/loading_logo.png" alt=""></a>
+            </div>
+            <div class="category">
+                <div class="cate_wrap">
+                    <a href="#black" id="exclude-link">notice<span></span></a><br><br>
+                    <p>·</p>
+                    <a href="#break" id="exclude-link">about<span></span></a><br><br>
+                    <p>·</p>
+                    <a href="#breathe" id="exclude-link">menu<span></span></a><br><br>
+                    <p>·</p>
+                    <a href="#bbb" id="exclude-link">exhibition<span></span></a><br><br>
+                    <p>·</p>
+                    <a href="#">online shop<span></span></a>
+                </div>
+            </div>
+            <div class="tool">
+                <div class="tool_wrap">
+                    <a href="login.html">login</a>
+                    <a id="exclude-link" class="map" href="#">map</a>
+                    <a id="exclude-link" href="#">en · kr</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="main_wrap"></div>
+        <div style="width:100%;height:0;position:relative;padding-bottom:56.250%;"><iframe src="https://streamable.com/e/x5lkpw?autoplay=1" frameborder="0" width="100%" height="100%" allowfullscreen allow="autoplay" style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden;"></iframe></div>
+    </div>
+
+    <div id="container">
+
+        <div class="box1"></div>
+
+        <div class="container_wrap">
+
+            <div id="black"></div>
+
+            <div class="notice">
+                <div class="notice_wrap">
+
+                    <input type="radio" id="news" name="notice" chekced>
+                    <input type="radio" id="event" name="notice">
+                    <input type="radio" id="note" name="notice">
+
+                    <h1 class="n_title">notice</h1>
+
+                    <div class="n_btn_wrap">
+
+                        <div class="btn_wrap">
+
+                            <div class="n_btn">
+                                <label for="news">news</label>
+                            </div>
+
+                            <div class="n_btn">
+                                <label for="event">event</label>
+                            </div>
+
+                            <div class="n_btn">
+                                <label for="note">note</label>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="banner">
+
+                        <div class="box2"></div>
+
+                        <ul class="bn_gallery">
+
+                            <li>
+                                <ul class="bn_list">
+                                    <li>
+                                        <div class="bn_more"><a href="#">자세히</a><p>자세히</p></div>
+                                        <a href="#">
+                                            <div class="bn_inner">
+                                                <div class="a_title">OUR NEW</div>
+                                                <div class="a_sub">COLD<br>BREW</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <div class="bn_more"><a href="#">자세히</a><p>자세히</p></div>
+                                        <a href="#">
+                                            <div class="bn_inner">
+                                                <div class="b_title">:)</div>
+                                                <div class="b_sub"><span>DON'T</span>
+                                                    SKIP<br>YOUR<br><span>BREAKFAST</span>!</div>
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+                            <li>
+                                <ul class="bn_list">
+                                    <li>
+                                        <div class="bn_more"><a href="#">자세히</a><p>자세히</p></div>
+                                        <a href="#">
+                                            <div class="bn_inner">
+                                                <div class="c_wrap">
+                                                    <div class="c_title">OPEN<br>EVENT</div>
+                                                    <div class="c_sub">
+                                                        저희 흑헐식에서<br>
+                                                        디저트를 구매하시는<br>
+                                                        모든 분들께 작은 선물을<br>
+                                                        증정 해드리고 있습니다.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <div class="bn_more"><a href="#">자세히</a><p>자세히</p></div>
+                                        <a href="#">
+                                            <div class="bn_inner">
+                                                <div class="d_title"><span>NEVER<br>FORGET</span><br>STAMPS</div>
+                                                <div class="d_sub">쿠폰을 발급 받고<br>무료 서비스를 제공 받으세요.</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <ul class="bn_list">
+                                    <li>
+                                        <div class="bn_more"><a href="#">자세히</a><p>자세히</p></div>
+                                        <a href="#">
+                                            <div class="bn_inner">
+                                                <div class="e_title">OUR NEW</div>
+                                                <div class="e_sub"><span>GOODS</span><br>ARE HERE !</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <div class="bn_more"><a href="#">자세히</a><p>자세히</p></div>
+                                        <a href="#">
+                                            <div class="bn_inner">
+                                                <div class="f_wrap">
+                                                    <div class="f_title"><span>BBB'</span>s<br>PLAYLIST</div>
+                                                    <div class="f_sub">
+                                                        흑헐식에서 재생되는 음악이<br>
+                                                        마음에 드셨나요?
+                                                    </div>
+                                                    <div class="f_sub">
+                                                        이제 당신의 공간에서도<br>
+                                                        저희가 제공하는 음악을<br>
+                                                        감상할 수 있습니다.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div id="break"></div>
+
+        <div class="intro">
+
+            <div class="intro_wrap">
+
+                <div class="intro_logo">
+                    <img src="images/intro_logo.png" alt="">
+                </div>
+
+                <div class="intro_h1">
+                    <img src="images/intro_h1.png" alt="">
+                </div>
+
+                <p class="intro">
+                    <흑헐식>은 별박이세줄나비의 모습을 본떠<br>
+                        브랜드 이미지를 만들었습니다.
+                </p>
+
+                <p class="intro">
+                    노력을 의미하는 조팝나무와 함께 살아가는 별박이세줄나비는<br>
+                    느린 속도로 나아가는 나비 중에서도 빠른 속도를 자랑합니다.
+                </p>
+
+                <p class="intro">
+                    별박이세줄나비의 모습을 관찰하며 저희 흑헐식은<br>
+                    시대에 맞춰 바쁘게 살아가야 하는 현대인들을 떠올렸고,
+                </p>
+
+                <p class="intro">
+                    그들이 몸과 마음이 편해질 수 있으면서도<br>
+                    그 휴식 속에서 색을 찾기를 바라는 마음으로<br>
+                    브랜드 컬러를 오직 무채색으로만 선정하였습니다.
+                </p>
+
+                <p class="intro">
+                    지친 현대인들을 위해 조용한 무드를 지향하는 저희 흑헐식은<br>
+                    몸과 마음을 진정시켜주는 좋은 음악들과 함께 오늘도 기다리고 있습니다.
+                </p>
+
+                <p class="intro">
+                    편안함을 안겨주는 무드로 항상 이곳에 자리하고 있겠습니다.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="content">
+
+            <div class="content_wrap">
+
+                <div class="side">
+                    <div class="side_wrap">
+                        <div class="side_a"><img src="images/side_a.png" alt=""></div>
+                        <div class="side_b"><img src="images/side_b.png" alt=""></div>
+                        <div class="side_c"><img src="images/side_c.png" alt=""></div>
+                        <div class="side_d"><img src="images/side_d.png" alt=""></div>
+                    </div>
+                </div>
+
+                <div class="best">
+
+                    <img src="images/menu_logo.png" alt="">
+                    <div class="cate_tt">
+                        BBB X BEST
+                    </div>
+
+                    <ul class="best_list">
+                        <li>
+                            <img src="images/mid_black.png" alt="">
+                            <h1>mid_black</h1>
+                            <h2>einspener</h2>
+                            <h3>#333</h3>
+                        </li>
+                        <li>
+                            <img src="images/black.png" alt="">
+                            <h1>black</h1>
+                            <h2>ice americano</h2>
+                            <h3>#000</h3>
+                        </li>
+                        <li>
+                            <img src="images/on_black.png" alt="">
+                            <h1>on_black</h1>
+                            <h2>dolce latte</h2>
+                            <h3>#555</h3>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div id="breathe"></div>
+
+                <div class="m_intro">
+
+                    <div class="m_wrap">
+                        <h1>menu</h1>
+                        <p>
+                            본인 만의 색을 찾기 위해서<br>
+                            우리는 다양하고 많은 경험이 필요합니다.
+                        </p>
+                        <p>
+                            흑헐식은 음료 부터 디저트까지<br>
+                            당신의 입맛에 맞는 색상을 찾아드리고자 합니다.
+                        </p>
+                        <p>
+                            흑헐식에서 당신의 색을 찾아보세요.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="m_list">
+
+                    <div class="coffee">
+                        <div class="menu_title">
+                            <hr>
+                            <h1>coffee</h1>
+                        </div>
+                        <ul>
+                            <li>
+                                <div class="m_image"><img src="images/black.png" alt=""></div>
+                                <div class="m_name">
+                                    <h1>black</h1>
+                                    <h2>: # 000</h2>
+                                    <h3>ice americano</h3>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="m_image"><img src="images/mid_black.png" alt=""></div>
+                                <div class="m_name">
+                                    <p>signature</p>
+                                    <h1>mid_black</h1>
+                                    <h2>: # 333</h2>
+                                    <h3>einspener</h3>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="m_image"><img src="images/on_black.png" alt=""></div>
+                                <div class="m_name">
+                                    <h1>on_black</h1>
+                                    <h2>: # 555</h2>
+                                    <h3>dolce latte</h3>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="m_image"><img src="images/white.png" alt=""></div>
+                                <div class="m_name">
+                                    <h1>white</h1>
+                                    <h2>: # fff</h2>
+                                    <h3>vanilla latte</h3>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="m_image"><img src="images/mid_white.png" alt=""></div>
+                                <div class="m_name">
+                                    <h1>mid_white</h1>
+                                    <h2>: # aaa</h2>
+                                    <h3>cafemoca</h3>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="m_image"><img src="images/on_white.png" alt=""></div>
+                                <div class="m_name">
+                                    <p>signature</p>
+                                    <h1>on_white</h1>
+                                    <h2>: # ccc</h2>
+                                    <h3>black sugar<br>einspener</h3>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="m_image"><img src="images/off_white.png" alt=""></div>
+                                <div class="m_name">
+                                    <h1>off_white</h1>
+                                    <h2>: # eee</h2>
+                                    <h3>cinnamon latte</h3>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="beverage">
+                        <div class="menu_title">
+                            <hr>
+                            <h1>beverage</h1>
+                        </div>
+
+                        <div class="bev_list">
+                            <ul class="slider">
+                                <li>
+                                    <div class="m_image"><img src="images/angels_tangerine.png" alt=""></div>
+                                    <div class="m_name">
+                                        <h1>angels tangerine</h1>
+                                        <h2 style="background-color:#ba0021;"># ba0021</h2>
+                                        <h3>plumade</h3>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="m_image"><img src="images/cherry_red.png" alt=""></div>
+                                    <div class="m_name">
+                                        <h1>cherry red</h1>
+                                        <h2 style="background-color:#aa0a27;"># aa0a27</h2>
+                                        <h3>cherry-lemonade</h3>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="m_image"><img src="images/honey_orange.png" alt=""></div>
+                                    <div class="m_name">
+                                        <h1>honey orange</h1>
+                                        <h2 style="color:#000; background-color:#ffbd31;"># ffbd31</h2>
+                                        <h3>citron tea</h3>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="m_image"><img src="images/crushed_ginger.png" alt=""></div>
+                                    <div class="m_name">
+                                        <h1>crushed ginger</h1>
+                                        <h2 style="color:#000; background-color:#c6c28d;"># c6c28d</h2>
+                                        <h3>ginger tea</h3>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="m_image"><img src="images/matcha.png" alt=""></div>
+                                    <div class="m_name">
+                                        <h1>matcha</h1>
+                                        <h2 style="background-color:#74a12e;"># 74a12e</h2>
+                                        <h3>matcha latte</h3>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="m_image"><img src="images/chocolate_malt.png" alt=""></div>
+                                    <div class="m_name">
+                                        <h1>chocolate malt</h1>
+                                        <h2 style="background-color:#907162;"># 907162</h2>
+                                        <h3>chocolate latte</h3>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="m_image"><img src="images/strawberry_cream.png" alt=""></div>
+                                    <div class="m_name">
+                                        <h1>strawberry cream</h1>
+                                        <h2 style="color:#000; background-color:#f4c3c4;"># f4c3c4</h2>
+                                        <h3>strawberry latte</h3>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="m_image"><img src="images/lemon_ciffon.png" alt=""></div>
+                                    <div class="m_name">
+                                        <h1>lemon ciffon</h1>
+                                        <h2 style="color:#000; background-color:#fffacd;"># f4c3c4</h2>
+                                        <h3>lemonade</h3>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="m_image"><img src="images/orange_peel.png" alt=""></div>
+                                    <div class="m_name">
+                                        <h1>orange peel</h1>
+                                        <h2 style="color:#000; background-color:#ff9f00;"># ff9f00</h2>
+                                        <h3>orangeade</h3>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="slide_control">
+                                <button class="left"><i class="fa-solid fa-chevron-left"></i></button>
+                                <button class="right"><i class="fa-solid fa-chevron-right"></i></button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="dessert">
+                        <div class="menu_title">
+                            <hr>
+                            <h1>dessert</h1>
+                        </div>
+                        <div class="bakery">
+                            <div class="set">
+                                <img class="set_img" src="images/sweet_sets.png" alt="">
+                                <p>
+                                    <span>sweet sets</span><br>
+                                    : <span>black club</span> only
+                                </p>
+                            </div>
+                            <div class="bakery_img">
+                                <ul>
+                                    <li><img src="images/bitter_chocolate.png" alt=""></li>
+                                    <li><img src="images/cottage_cheese.png" alt=""></li>
+                                    <li><img src="images/bistre.png" alt=""></li>
+                                    <li><img src="images/chestnut_green.png" alt=""></li>
+                                    <li><img src="images/butterscotch.png" alt=""></li>
+                                    <li><img src="images/chocolate_torte.png" alt=""></li>
+                                    <li><img src="images/black raspberry.png" alt=""></li>
+                                    <li><img src="images/barbados_cherry.png" alt=""></li>
+                                    <li><img src="images/mocaccino.png" alt=""></li>
+                                    <li><img src="images/flour.png" alt=""></li>
+                                    <li><img src="images/burnt_earth.png" alt=""></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="outro">
+                        <div class="out_tt">enjoy your color taste!</div>
+                        <div class="v_line"></div>
+                    </div>
+
+                </div>
+
+                <div id="bbb">
+                    <div class="v_line"></div>
+                </div>
+
+                <div class="exhibition">
+                    <div class="e_tt">
+                        <div class="e_logo"><img src="images/outro_logo.png" alt=""></div>
+                        <div class="cate_tt">EXHIBITION</div>
+                    </div>
+                    <div class="e_content">
+                        <div class="more_a">
+                            <a href="exhibition.html">
+                                <p>online<br>artfair</p>
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </a>
+                            <div class="more_c">
+                                <a href="exhibition.html">
+                                    <p>online<br>artfair</p>
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </a>
+                            </div>
+                            <div class="more_e"><a href="exhibition.html/#offline">오프라인 전시가 궁금하신가요? →</a></div>
+                        </div>
+                        <div class="more_b">
+                            <a href="#">
+                                <p>join as<br>an artist</p>
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </a>
+                            <div class="more_d">
+                                <a href="#">
+                                    <p>join as<br>an artist</p>
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="box_a">
+                            <p>
+                                수많은 작가들과 그들의 작품을 만나보세요.<br><br>
+
+                                정기적인 전시, 팝업 스토어 형식의 아트페어 등<br>
+                                다양한 형태로 작품들을 보여드리면서<br>
+                                당신의 색을 찾는 것을 돕고자 합니다.<br><br>
+
+                                오프라인 뿐만 아니라<br>
+                                온라인으로도 제공되는 아트페어를<br>
+                                당신만의 공간에서 즐기세요.
+                            </p>
+                        </div>
+                        <div class="box_b">
+                            <p>
+                                작가이신가요?<br><br>
+
+                                오픈 된 공간에서 당신의 창작물들을<br>
+                                전시 및 판매 또한 가능합니다.<br><br>
+
+                                선호하는 컬러, 무드, 또는 단어와 문장과 같이<br>
+                                작은 카테고리 부터 천천히 시작해도 좋습니다.<br><br>
+
+                                지금 당신의 기분은 어떠한가요?<br><br>
+
+                                오늘, 그리고 지금의 당신을 표현해보세요.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="e_img">
+                        <img src="images/exhibition.png" alt="">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="box3"></div>
+            <div class="box4"></div>
+
+        </div>
+
+        <div id="footer">
+            <div class="footer_wrap">
+                <div class="footer_logo"><img src="images/footer_logo.png" alt=""></div>
+                <div class="footer_map">
+                    <ul>
+                        <li class="adress">
+                            <a href="#" id="exclude-link">
+                                Seojeon ro 37beon gil 18 2F<br>
+                                Busanjin gu Busan SouthKorea
+                            </a>
+                            
+                        </li>
+                        <li class="tel">
+                            <a href="#" id="exclude-link"><span>+82</span> 51 133 0361</a>
+                            <a href="#" id="exclude-link"><span>+82</span> 10 6312 7369</a>
+                        </li>
+                        <li class="mail">
+                            <a href="#" id="exclude-link">black.bb @ gmail.com</a>
+                        </li>
+                        <li class="schedule">
+                            <span>online</span>&nbsp;&nbsp; mon - fri, 10:00 - 18:00<br>
+                            <span>offline</span>&nbsp;&nbsp; wed - mon, 9:00 - 10:00<br>
+                            / all off on public holidays.
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer_tool">
+                    <ul>
+                        <li><a href="#">agreements</a></li>
+                        <li><a href="#">terms, conditions</a></li>
+                        <li><a href="#">customer center</a></li>
+                    </ul>
+                    <div class="sub_a">
+                        <button class="sub_b">subscribe</button>
+                        <p>subscribe</p>
+                    </div>
+                    <div class="copyright">© heukhulsik. all right reserved.</div>
+                </div>
+            </div>
+            </div>
+        </div>
+
+    </div>
+    <script>
+      function showMap() {
+        var mapElement = document.getElementById("map");
+        mapElement.style.display = "flex";
+        setTimeout(function() {
+          mapElement.style.opacity = 1;
+        }, 10);
+      }
+
+      function hideMap() {
+        var mapElement = document.getElementById("map");
+        mapElement.style.opacity = 0;
+        setTimeout(function() {
+          mapElement.style.display = "none";
+        }, 1000);
+      }
+
+      document.addEventListener("DOMContentLoaded", function() {
+        var mapButton = document.querySelector(".map");
+        var closeButton = document.querySelector(".map_close");
+
+        mapButton.addEventListener("click", showMap);
+        closeButton.addEventListener("click", hideMap);
+      });
+    </script>
+    <script>
+      var mapButton = document.querySelector(".map");
+      mapButton.addEventListener("click", function(event) {
+        // 현재 스크롤 위치 저장
+        var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+        showMap(); // #map 표시
+
+        // 등장 후에 스크롤 위치 복원
+        setTimeout(function() {
+          window.scrollTo(0, scrollPosition);
+        }, 10);
+      });
+    </script>
+
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+
+</html>

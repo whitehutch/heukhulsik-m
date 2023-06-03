@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>黑歇息</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="http://fatlinesofcode.github.io/jquery.smoothwheel/src/jquery.smoothwheel.js"></script>
+    <script src="https://kit.fontawesome.com/6a7f0abbbd.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css" />
+    <script>
+        $(document).ready(function () {
+            $('.btn_wrap div>label').on("click", function () {
+                $('.btn_wrap div>label').css({ 'background-color': '#000000', 'color': '#ffffff', 'transition': '0.5s' });
+                $(this).css({ 'background-color': '#ffffff', 'color': '#000', 'transition': '0.5s' });
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("body").smoothWheel()
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+                let roller = document.querySelector('.roller');
+                roller.id = 'roller1';
+                let clone = roller.cloneNode(true);
+                clone.id = 'roller2';
+                document.querySelector('.ad_wrap').appendChild(clone);
+                document.querySelector('#roller1').style.left = '0px';
+                document.querySelector('#roller2').style.left = document.querySelector('.roller ul').offsetWidth + 'px';
+                roller.classList.add('original');
+                clone.classList.add('clone');
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            var slideCount = $('.slider li').length;
+            var slideWidth = $('.slider li').outerWidth();
+            var slideHeight = $('.slider li').outerHeight();
+            var sliderUlWidth = slideCount * slideWidth;
+            $('.bev_list').css({ width: slideWidth, height: slideHeight });
+            $('.slider').css({ width: sliderUlWidth, marginLeft: -slideWidth * 3.908, textAlign: 'center' });
+            function moveLeft() {
+                ;
+                $('.slider').animate(
+                    {
+                        left: slideWidth * 0.8
+                    },
+                    700,
+                    function () {
+                        $('.slider li:last-child').prependTo('.slider');
+                        $('.slider').css('left', '');
+                        applySlideStyles();
+                    }
+                );
+            }
+            function moveRight() {
+                $('.slider').animate(
+                    {
+                        left: -slideWidth * 0.8
+                    },
+                    700,
+                    function () {
+                        $('.slider li:first-child').appendTo('.slider');
+                        $('.slider').css('left', '');
+                        applySlideStyles();
+                    }
+                );
+            }
+            function applySlideStyles() {
+                $('.slider li').css({
+                    filter:'grayscale(1)',
+                    opacity: '0.4',
+                    position: 'relative',
+                    left: '0'
+                });
+                var centerIndex = Math.floor((slideCount + 8) / 4);
+                $('.slider li').eq(centerIndex).css({
+                    filter:'grayscale(0)',
+                    opacity: '1'
+                });
+            }
+            $('.left').click(function () {
+                moveLeft();
+            });
+            $('.right').click(function () {
+                moveRight();
+            });
+            applySlideStyles();
+        });
+    </script>
+    <script>
+        $(function ($) {
+                // 로딩 페이지 보이기
+                var loadingPage = $('<div class="loading_page"><div class="loading_wrap"><img class="loading_logo" src="images/loading_logo.png" alt="Loading Logo"><div class="loading_text"><img src="images/loading_text.png" alt="Loading Logo"></div></div></div>');
+                $('body').append(loadingPage);
+                loadingPage.css("display", "static");
+                loadingPage.fadeOut(2000);
+
+                // 특정 요소를 제외한 <a> 요소에 클릭 이벤트 바인딩
+                $("a:not(#exclude-link)").click(function (event) {
+                    event.preventDefault();
+                    var linkLocation = this.href;
+                    loadingPage.fadeIn(1000, function () {
+                        redirectPage(linkLocation);
+                    });
+                });
+
+                function redirectPage(linkLocation) {
+                    window.location.href = linkLocation;
+                }
+            });
+    </script>
+
+    <style>
+
+        .loading_page {
+            z-index: 999999;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .loading_wrap {
+            margin-top:50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .loading_logo { position:absolute; width:200px; animation: rotate_image 5s linear infinite; }
+        .loading_text { margin-top:-20px; }
+        .loading_text img { width:240px; animation: rotate_image 10s linear infinite; }
+
+    </style> 
+    <script>
+        $(function ($) {
+            $(".footer_map .tel a").click(function (event) {
+                event.preventDefault();
+                var phoneNumber = $(this).text();
+                // 복사 로직 구현
+                copyToClipboard(phoneNumber);
+            });
+
+            function copyToClipboard(text) {
+                var tempInput = $("<input>");
+                $("body").append(tempInput);
+                tempInput.val(text).select();
+                document.execCommand("copy");
+                tempInput.remove();
+            }
+        });
+  </script>
+  <script>
+    $(function ($) {
+        $(".footer_map .adress a").click(function (event) {
+            event.preventDefault();
+            var address = "부산광역시 부산진구 서전로 37번길 18 2층";
+            // 복사 로직 구현
+            copyToClipboard(address);
+        });
+
+        // 이하 함수들은 이전에 설명한 코드와 동일합니다.
+        function copyToClipboard(text) {
+            var tempInput = $("<input>");
+            $("body").append(tempInput);
+            tempInput.val(text).select();
+            document.execCommand("copy");
+            tempInput.remove();
+        }
+    });
+    </script>
+
+</head>
+
+<body>
+    
+    <div id="ad">
+        <div class="ad_wrap">
+            <div class="roller">
+                <ul>
+                    <li>
+                        ｜ OPEN EVENT ｜ 인스타그램 스토리에 <b>about</b>을 캡처하여 공유해주시면 디저트 중 하나를 무료로 드립니다.
+                         ｜ OPEN EVENT ｜ if you capture and share <b>about tab</b> in your instagram story, we will give you one of the dessert. &nbsp;
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="header">
+        <div class="header_wrap">
+            <div class="logo">
+                <a href="https://whitehutch.github.io/heukhulsik/"><img src="images/header_logo.png" alt=""></a>
+            </div>
+            <div class="menu">
+                <div class="tool">
+                    <div class="tool_wrap">
+                        <a href="#" id="exclude-link">login</a>
+                        <a class="map" href="#" id="exclude-link">map</a>
+                        <a href="#">en · kr</a>
+                    </div>
+                </div>
+                <div class="category">
+                    <div class="cate_wrap">
+                        <a href="https://whitehutch.github.io/heukhulsik/#black" id="notice">notice<span></span></a>
+                        <a href="https://whitehutch.github.io/heukhulsik/#break" id="about">about<span></span></a>
+                        <a href="https://whitehutch.github.io/heukhulsik/#breathe" id="menu">menu<span></span></a>
+                        <a href="https://whitehutch.github.io/heukhulsik/#bbb" id="exhibition">exhibition<span></span></a>
+                        <a href="#">online shop<span></span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="bridge">
+                <a href="#"><img src="images/shop.png" alt=""></a>
+            </div>
+        </div>
+    </div>
+
+    <div id="map">
+        <div class="map_flex">
+            <div class="map_wrap">
+                <a href="#map" class="map_close" id="exclude-link">×</a>
+                <div class="map_tt">
+                    <p>
+                        <span>오시는 길</span><br>
+                        부산진구 전포동<br>
+                        서전로 37번길 18 2층<br>
+                    </p>
+                    <p>
+                        서면역 2호선 8번 출구<br>
+                        전포역 2호선 7번 출구<br>
+                        <span class="bus">85, 138-1,<br>부산진구 11, 부산진구 12-1</span>
+                    </p>
+                </div>
+                <div class="map_im"><img src="images/map.png" alt=""></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="container">
+
+        <div id="register">
+
+            <img src="images/menu_logo.png" alt="">
+            <h1>login</h1>
+
+            <div class="reg_wrap">
+                <form method="post" action="https://whitehutch.github.io/heukhulsik/" id="login-form">
+                    <input class="id" type="text" name="userName" placeholder="id">
+                    <input class="password" type="password" name="userPassword" placeholder="password">
+                    <label for="remember-check">
+                        <input type="checkbox" id="remember-check">save my id
+                    </label>
+
+                    <div class="login_button">
+                        <input class="login" type="submit" value="Login">
+                        <input class="clone" type="submit" value="Login">
+                    </div>
+
+                </form>
+
+                <hr>
+
+                <div class="reg_tool">
+                    <div class="register"><a href="#">register</a></div>
+                    <ul>
+                        <h2>find</h2>
+                        <li><a href="#">id</a></li>
+                        <li><a href="#">password</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="footer">
+            <div class="footer_wrap">
+                <div class="footer_logo"><img src="images/footer_logo.png" alt=""></div>
+                <div class="footer_map">
+                    <ul>
+                        <li class="adress">
+                            <a href="#" id="exclude-link">
+                                Seojeon ro 37beon gil 18 2F<br>
+                                Busanjin gu Busan SouthKorea
+                            </a>
+                            
+                        </li>
+                        <li class="tel">
+                            <a href="#" id="exclude-link"><span>+82</span> 51 133 0361</a>
+                            <a href="#" id="exclude-link"><span>+82</span> 10 6312 7369</a>
+                        </li>
+                        <li class="mail">
+                            <a href="#" id="exclude-link">black.bb @ gmail.com</a>
+                        </li>
+                        <li class="schedule">
+                            <span>online</span>&nbsp;&nbsp; mon - fri, 10:00 - 18:00<br>
+                            <span>offline</span>&nbsp;&nbsp; wed - mon, 9:00 - 10:00<br>
+                            / all off on public holidays.
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer_tool">
+                    <ul>
+                        <li><a href="#">agreements</a></li>
+                        <li><a href="#">terms, conditions</a></li>
+                        <li><a href="#">customer center</a></li>
+                    </ul>
+                    <div class="sub_a">
+                        <button class="sub_b">subscribe</button>
+                        <p>subscribe</p>
+                    </div>
+                    <div class="copyright">© heukhulsik. all right reserved.</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        $(document).ready(function () {
+                function resizeApply() {
+                    var minWidth = 1300;
+                    var body = document.getElementsByTagName('body')[0];
+                    if (window.innerWidth < minWidth) { body.style.zoom = (window.innerWidth / minWidth); }
+                    else body.style.zoom = 1;
+                }
+
+                window.onload = function () {
+                    window.addEventListener('resize', function () {
+                        resizeApply();
+                    });
+                }
+
+                resizeApply();
+            });
+    </script>
+    <script>
+      function showMap() {
+        var mapElement = document.getElementById("map");
+        mapElement.style.display = "flex";
+        setTimeout(function() {
+          mapElement.style.opacity = 1;
+        }, 10);
+      }
+
+      function hideMap() {
+        var mapElement = document.getElementById("map");
+        mapElement.style.opacity = 0;
+        setTimeout(function() {
+          mapElement.style.display = "none";
+        }, 1000);
+      }
+
+      document.addEventListener("DOMContentLoaded", function() {
+        var mapButton = document.querySelector(".map");
+        var closeButton = document.querySelector(".map_close");
+
+        mapButton.addEventListener("click", showMap);
+        closeButton.addEventListener("click", hideMap);
+      });
+    </script>
+    <script>
+      var mapButton = document.querySelector(".map");
+      mapButton.addEventListener("click", function(event) {
+        // 현재 스크롤 위치 저장
+        var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+        showMap(); // #map 표시
+
+        // 등장 후에 스크롤 위치 복원
+        setTimeout(function() {
+          window.scrollTo(0, scrollPosition);
+        }, 10);
+      });
+    </script>
+
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+
+</html>
