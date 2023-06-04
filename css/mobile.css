@@ -309,14 +309,14 @@ html { overflow-x:hidden; zoom:0.81; }
     z-index:1;
     position:relative;
     width:100%;
-    padding-bottom:500px;
+    padding-bottom:350px;
 }
 
 .box1 {
     z-index:-999;
     position:absolute;
     width:100%;
-    height:650px;
+    height: 525px;
     background-color:black;
 }
 
@@ -339,7 +339,7 @@ html { overflow-x:hidden; zoom:0.81; }
 
 .notice_wrap {
     box-sizing: border-box;
-    margin: 160px auto 0;
+    margin: 190px auto 0;
     padding: 0;
     width: 90%;
     height: 722px;
@@ -347,25 +347,25 @@ html { overflow-x:hidden; zoom:0.81; }
 
 .n_title {
     color: rgba(255, 255, 255, 1);
-    font-size: 28.5px;
+    font-size: 25px;
     font-weight: 900;
     text-align: center;
     text-transform: uppercase;
 }
 
 .n_btn_wrap {
-    margin: 33.25px auto 0;
-    width: 349.6px;
+    margin: 25px auto 0;
+    width: 59%;
 }
 
 .n_btn {
     z-index: 9999;
     display: inline-block;
     box-sizing: border-box;
-    margin-right: 14.25px;
-    width: 104.5px;
+    margin-right: 7.5px;
+    width: 75px;
     text-align: center;
-    border-radius: 47.5px;
+    border-radius: 50px;
     transition: 1s;
     cursor: pointer;
 }
@@ -401,7 +401,7 @@ html { overflow-x:hidden; zoom:0.81; }
 .n_btn label {
     display: block;
     padding: 4.75px 0;
-    font-size: 19px;
+    font-size: 15px;
     font-weight: 500;
     color: rgba(255, 255, 255, 1);
     border-radius: 47.5px;
@@ -422,11 +422,11 @@ html { overflow-x:hidden; zoom:0.81; }
 .box2 {
     z-index: -888;
     position: absolute;
-    width: 99.7%;
-    margin: 55px auto 0;
-    height: 440px;
-    border: 2px solid #000;
-    border-radius: 109.25px;
+    width: 99%;
+    margin: 35px auto 0;
+    height: 300px;
+    border: 1px solid #000;
+    border-radius: 75px;
     background-color: rgba(255, 255, 255, 1);
 }
 
@@ -463,8 +463,8 @@ html { overflow-x:hidden; zoom:0.81; }
     z-index: 778;
     position: absolute;
     width: 13.5%;
-    margin-top: 460px;
-    margin-left: 30%;
+    margin-top: 300px;
+    margin-left: 25%;
 }
 
 .bn_more a {
@@ -472,13 +472,13 @@ html { overflow-x:hidden; zoom:0.81; }
     box-sizing: border-box;
     display: inline-block;
     position:absolute;
-    width: 80px;
+    width: 70px;
     padding: 7.5px 0;
     color:black;
     border:2px solid black;
     border-radius: 47.5px;
     background-color: rgba(255,255,255, 1);
-    font-size: 17.5px;
+    font-size: 15px;
     font-weight: 600;
     text-align: center;
     clip-path: circle(0% at 50% 50%);
@@ -490,12 +490,12 @@ html { overflow-x:hidden; zoom:0.81; }
     position:absolute;
     box-sizing: border-box;
     display: inline-block;
-    width: 80px;
-    padding: 9.5px 0;
+    width: 70px;
+    padding: 7.5px 0;
     border-radius: 47.5px;
     color:white;
     background-color: rgba(0, 0, 0, 1);
-    font-size: 17.5px;
+    font-size: 15px;
     font-weight: 600;
     text-align: center;
     
@@ -510,8 +510,8 @@ html { overflow-x:hidden; zoom:0.81; }
     display: inline-block;
     position: absolute;
     width: 40%;
-    height: 450px;
-    border-radius: 475px;
+    height: 350px;
+    border-radius: 100px;
     border: 1.9px solid #000;
     background-size: cover;
     background-repeat: no-repeat;
@@ -550,20 +550,20 @@ html { overflow-x:hidden; zoom:0.81; }
 /* bn inner */
 .a_title {
     margin-top: 64.5px;
-    margin-left: 5vw;
-    padding-left: 4.75px;
+    margin-left: 4.5vw;
+    padding-left: 2px;
     color: #AF9889;
-    font-size: 14.25px;
+    font-size: 10px;
     font-weight: 900;
 }
 
 .a_sub {
-    margin-left: 5vw;
-    padding-top: 4.75px;
+    margin-left: 4.5vw;
+    padding-top: 2px;
     color: white;
-    font-size: 26.875px;
+    font-size: 17.5px;
     font-weight: 900;
-    line-height: 33.25px;
+    line-height: 20px;
     letter-spacing: 1px;
 }
 
@@ -571,16 +571,16 @@ html { overflow-x:hidden; zoom:0.81; }
     margin-top: 36.75px;
     margin-bottom: 9.5px;
     color: #fff;
-    font-size: 23.5px;
+    font-size: 17.5px;
     font-weight: 900;
     text-align: center;
 }
 
 .b_sub {
     color: white;
-    font-size: 26.35px;
+    font-size: 20px;
     font-weight: 900;
-    line-height: 35.75px;
+    line-height: 25px;
     letter-spacing: 1px;
     text-align: center;
 }
@@ -594,123 +594,123 @@ html { overflow-x:hidden; zoom:0.81; }
 }
 
 .c_wrap {
-    margin-top: 159.625px;
-    margin-left: 10%;
+    margin-top: 110px;
+    margin-left: 11%;
     border: 1.9px solid black;
-    width: 80%;
-    height: 36%;
+    width: 130px;
+    height: 130px;
     border-radius: 213.75px;
     background-color: rgba(255, 255, 255, 0.665);
 }
 
 .c_title {
-    margin-top: 35px;
+    margin-top: 20px;
     color: #000;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: 900;
     text-align: center;
-    line-height: 30px;
+    line-height: 20px;
     letter-spacing: 1.425px;
 }
 
-.c_title span {font-size:25px;}
+.c_title span { font-size:15px; }
 
 .c_sub {
     margin-top: 4.75px;
     color: #000;
     font-family: 'Pretendard-Regular';
-    font-size: 13px;
+    font-size: 10px;
     font-weight: 600;
     text-align: center;
-    line-height: 16.625px;
+    line-height: 12.5px;
 }
 
 .d_title {
-    margin-top: 75.75px;
-    margin-bottom: 5px;
+    margin-top: 40px;
+    margin-bottom: 2.5px;
     color: #fff;
-    font-size: 32.625px;
+    font-size: 25px;
     font-weight: 900;
     text-align: center;
-    line-height: 37px;
+    line-height: 30px;
     letter-spacing: 1.9px;
 }
 
 .d_title span {
     display:block;
     color: #7194CA;
-    font-size: 30.25px;
-    line-height: 30px;
+    font-size: 20px;
+    line-height: 22.5px;
 }
 
 .d_sub {
     margin-top: 5px;
     color: rgba(255, 255, 255, 0.5);
     font-family: 'Pretendard-Regular';
-    font-size: 13px;
-    font-weight: 300;
+    font-size: 10px;
+    font-weight: 400;
     text-align: center;
-    line-height: 16.6px;
+    line-height: 12.5px;
     letter-spacing: 0.475px;
 }
 
 .e_title {
-    margin-top: 47.25px;
+    margin-top: 32.5px;
     margin-bottom: 2.375px;
     color: #333;
-    font-size: 19px;
+    font-size: 15px;
     font-weight: 900;
     text-align: center;
 }
 
 .e_sub {
     color: #000;
-    font-size: 27.5px;
+    font-size:20px;
     font-weight: 900;
-    line-height: 32.9px;
+    line-height: 22.5px;
     letter-spacing: 1px;
     text-align: center;
 }
 
 .e_sub span {
     color: #8E73AC;
-    font-size: 35px;
+    font-size: 25px;
 }
 
 .f_wrap {
-    margin-top: 159.625px;
-    margin-left: 27.375px;
+    margin-top: 110px;
+    margin-left: 11%;
     border: 1.9px solid white;
-    width: 80%;
-    height: 36%;
+    width: 130px;
+    height: 130px;
     border-radius: 261.25px;
     background-color: rgba(0, 0, 0, 1);
 }
 
 .f_title {
-    margin-top: 27.875px;
-    margin-bottom: 9.25px;
+    margin-top: 17.875px;
+    margin-bottom: 5px;
     color: #fff;
-    font-size: 23.75px;
+    font-size: 15px;
     font-weight: 900;
     text-align: center;
-    line-height: 28.5px;
+    line-height: 17.5px;
     letter-spacing: 1.425px;
 }
 
 .f_title span {
     color: #D5D5D5;
-    font-size: 23.25px;
+    font-size: 20px;
 }
 
 .f_sub {
-    margin-bottom: 7.125px;
+    margin-bottom: 2px;
     color: #fff;
     font-family: 'Pretendard-Regular';
-    font-size: 14px;
+    font-size: 10px;
     font-weight: 300;
     text-align: center;
-    line-height: 16.625px;
+    line-height: 12.5px;
 }
 
 
@@ -1455,40 +1455,40 @@ html { overflow-x:hidden; zoom:0.81; }
     position:absolute;
     bottom:0;
     width:100%;
-    height:500px;
+    height:525px;
     border-top:1px solid white;
     background-color:black;
 }
 
 .footer_wrap {
-    margin:100px auto;
+    margin:65px auto;
     width:75%;
 }
 .footer_wrap ul { list-style:none; }
 
-.footer_logo { width:1300px; }
-.footer_logo img { width:15%; }
+.footer_logo { width:100%; }
+.footer_logo img { width:45%; }
 
-.footer_map { float:left; margin-top:45px; }
+.footer_map { float:left; margin-top:25px; }
 .footer_map li {
     display:block;
     width:100%;
-    margin-bottom:15px;
+    margin-bottom:10px;
     color:white;
-    font-size:15px;
+    font-size:12.5px;
     font-weight:300;
-    line-height:20px;
+    line-height:15px;
     letter-spacing:1px;
 }
 .footer_map li:last-child { margin-bottom:0; }
 
-.footer_tool { float:left; margin-top:75px; margin-left:7.5%; }
+.footer_tool { clear:both; padding:20px 0px; margin-left:0%; }
 .footer_tool ul { list-style:none; }
 .footer_tool li {
     width:100%;
     margin-bottom:10px;
     color:white;
-    font-size:15px;
+    font-size:12.5px;
     font-weight:300;
     line-height:15px;
     letter-spacing:1px;
