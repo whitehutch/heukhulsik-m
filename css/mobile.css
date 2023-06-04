@@ -355,14 +355,14 @@ html { overflow-x:hidden; zoom:0.81; }
 
 .n_btn_wrap {
     margin: 25px auto 0;
-    width: 59%;
+    width: 60%;
 }
 
 .n_btn {
     z-index: 9999;
     display: inline-block;
     box-sizing: border-box;
-    margin-right: 7.5px;
+    margin-right: 2.5%;
     width: 75px;
     text-align: center;
     border-radius: 50px;
@@ -724,24 +724,24 @@ html { overflow-x:hidden; zoom:0.81; }
 }
 
 .intro_wrap {
-    margin:0 auto;
-    width:1300px;
+    margin:145px auto 0;
+    width:100%;
 }
 
 .intro_logo { text-align:center; }
-.intro_logo img { width:250px;  }
-.intro_h1 { margin-top:50px; text-align:center; }
-.intro_h1 img { width:290px; }
+.intro_logo img { width:35%; }
+.intro_h1 { margin-top:25px; text-align:center; }
+.intro_h1 img { width:50%; }
 
 .intro p {
-    margin-top:35px;
+    margin-top:20px;
     color:rgba(255,255,255,1);
-    font-size:1vw;
+    font-size:12.5px;
     text-align:center;
-    line-height:25px;
+    line-height:15px;
 }
-.intro p:first-of-type { margin-top:50px; }
-.intro p:last-of-type { padding-bottom:90px; }
+.intro p:first-of-type { margin-top:25px; }
+.intro p:last-of-type { padding-bottom:50px; }
 
 
 
@@ -751,11 +751,12 @@ html { overflow-x:hidden; zoom:0.81; }
 .divider { 
     margin:0 auto;
     width:100%;
-    height:500px;
+    height:450px;
     background-image:url('../images/intro_bg.jpg');
     background-size:cover;
-    background-position:center center;
+    background-position:bottom center;
     background-attachment:fixed;
+    background-repeat: no-repeat;
 }
 
 
