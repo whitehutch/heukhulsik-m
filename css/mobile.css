@@ -1051,15 +1051,15 @@ html { overflow-x:hidden; zoom:0.81; }
 .slide_control button {
     z-index:9998;
     position:absolute;
-    top:37.5%;
+    top:51%;
     color:white;
     font-size:20px;
     cursor:pointer;
     transform: translateY(-50%);
     background-color:rgba(0,0,0,0);
 }
-.left, .left:focus, .left:active { left:75px; }
-.right, .right:focus, .right:active { right:75px; }
+.left, .left:focus, .left:active { left:35px; }
+.right, .right:focus, .right:active { right:15px; }
 
 
 
