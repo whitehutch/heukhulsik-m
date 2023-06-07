@@ -312,6 +312,7 @@ html { overflow-x:hidden; zoom:0.81; }
     position:relative;
     width:100%;
     padding-bottom:350px;
+    background-color:black;
 }
 
 .box1 {
@@ -320,9 +321,6 @@ html { overflow-x:hidden; zoom:0.81; }
     width:100%;
     height: 525px;
     background-color:black;
-}
-
-.container_wrap {
 }
 
 
@@ -765,7 +763,6 @@ html { overflow-x:hidden; zoom:0.81; }
 .content {
     position:relative;
     width:100%;
-    background-color:#000;
 }
 
 .cate_tt { 
@@ -1006,6 +1003,60 @@ html { overflow-x:hidden; zoom:0.81; }
     margin:50px auto 0;
     width:100%;
     overflow:hidden;
+}
+
+.viewport {
+    width: 250px;
+    margin: 0 auto;
+}
+
+.flipsnap {
+    width:2250px; /* item width x item count */
+}
+
+.flipsnap:after {
+    content: '';
+    display: block;
+    clear: both;
+    height: 0;
+}
+
+.item {
+    float: left;
+    font-size: 50px;
+    text-align: center;
+    box-sizing: border-box;
+    width: 250px;
+    height: 250px;
+    padding-top: 25px;
+    border: 2px solid white;
+    border-radius: 400px;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.item img {
+    height: 120px;
+}
+
+.item .m_name h1 {
+    margin-top: 5px;
+    font-size: 16.5px;
+    font-weight: 800;
+}
+
+.item .m_name h2 {
+    display:block;
+    margin: 2.5px auto 3px;
+    width:fit-content;
+    padding: 0 2.5px;
+    color: rgba(255, 255, 255, 1);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.item .m_name h3 {
+    font-size: 14px;
+    font-weight: 600;
 }
 
 
