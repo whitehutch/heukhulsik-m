@@ -48,75 +48,6 @@
         });
     </script>
     <script>
-        $(document).ready(function () {
-            var slideCount = $('.slider li').length;
-            var slideWidth = $('.slider li').outerWidth();
-            var slideHeight = $('.slider li').outerHeight();
-            var sliderUlWidth = slideCount * slideWidth;
-            $('.bev_list').css({ width: slideWidth, height: slideHeight });
-            $('.slider').css({ width: sliderUlWidth, marginLeft: -slideWidth * 3.908, textAlign: 'center' });
-            function moveLeft() {
-                ;
-                $('.slider').animate(
-                    {
-                        left: slideWidth * 0.8
-                    },
-                    700,
-                    function () {
-                        $('.slider li:last-child').prependTo('.slider');
-                        $('.slider').css('left', '');
-                        applySlideStyles();
-                    }
-                );
-            }
-            function moveRight() {
-                $('.slider').animate(
-                    {
-                        left: -slideWidth * 0.8
-                    },
-                    700,
-                    function () {
-                        $('.slider li:first-child').appendTo('.slider');
-                        $('.slider').css('left', '');
-                        applySlideStyles();
-                    }
-                );
-            }
-            function applySlideStyles() {
-                $('.slider li').css({
-                    filter: 'grayscale(1)',
-                    opacity: '0.4',
-                    position: 'relative',
-                    left: '0'
-                });
-                var centerIndex = Math.floor((slideCount + 8) / 4);
-                $('.slider li').eq(centerIndex).css({
-                    filter: 'grayscale(0)',
-                    opacity: '1'
-                });
-            }
-            $('.left').click(function () {
-                moveLeft();
-            });
-            $('.right').click(function () {
-                moveRight();
-            });
-            applySlideStyles();
-        });
-    </script>
-    <script>
-        $(document).ready(function () {
-            $(window).scroll(function () {
-                var scrollValue = $(document).scrollTop();
-                console.log(scrollValue);
-            });
-        });
-    </script>
-    <script>
-        $(document).ready(function () {
-        });
-    </script>
-    <script>
         $(function ($) {
             // 로딩 페이지 보이기
             var loadingPage = $('<div class="loading_page"><div class="loading_wrap"><img class="loading_logo" src="images/loading_logo.png" alt="Loading Logo"><div class="loading_text"><img src="images/loading_text.png" alt="Loading Logo"></div></div></div>');
@@ -279,6 +210,53 @@
                 title="YouTube video player" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 id="video"></iframe></div>
+    </div>
+
+    <div id="container">
+        <div class="container_wrap">
+
+
+            <div id="footer">
+                <div class="footer_wrap">
+                    <div class="footer_logo"><img src="images/footer_logo.png" alt=""></div>
+                    <div class="footer_map">
+                        <ul>
+                            <li class="adress">
+                                <a href="#" id="exclude-link">
+                                    Seojeon ro 37beon gil 18 2F<br>
+                                    Busanjin gu Busan SouthKorea
+                                </a>
+
+                            </li>
+                            <li class="tel">
+                                <a href="#" id="exclude-link"><span>+82</span> 51 133 0361</a>
+                                <a href="#" id="exclude-link"><span>+82</span> 10 6312 7369</a>
+                            </li>
+                            <li class="mail">
+                                <a href="#" id="exclude-link">black.bb @ gmail.com</a>
+                            </li>
+                            <li class="schedule">
+                                <span>online</span>&nbsp;&nbsp; mon - fri, 10:00 - 18:00<br>
+                                <span>offline</span>&nbsp;&nbsp; wed - mon, 9:00 - 10:00<br>
+                                / all off on public holidays.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer_tool">
+                        <ul>
+                            <li><a href="#">agreements</a></li>
+                            <li><a href="#">terms, conditions</a></li>
+                            <li><a href="#">customer center</a></li>
+                        </ul>
+                        <div class="sub_a">
+                            <button class="sub_b">subscribe</button>
+                            <p>subscribe</p>
+                        </div>
+                        <div class="copyright">© heukhulsik. all right reserved.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="https://www.youtube.com/iframe_api"></script>

@@ -48,75 +48,6 @@
         });
     </script>
     <script>
-        $(document).ready(function () {
-            var slideCount = $('.slider li').length;
-            var slideWidth = $('.slider li').outerWidth();
-            var slideHeight = $('.slider li').outerHeight();
-            var sliderUlWidth = slideCount * slideWidth;
-            $('.bev_list').css({ width: slideWidth, height: slideHeight });
-            $('.slider').css({ width: sliderUlWidth, marginLeft: -slideWidth * 3.849, textAlign: 'center' });
-            function moveLeft() {
-                ;
-                $('.slider').animate(
-                    {
-                        left: slideWidth * 0.8
-                    },
-                    700,
-                    function () {
-                        $('.slider li:last-child').prependTo('.slider');
-                        $('.slider').css('left', '');
-                        applySlideStyles();
-                    }
-                );
-            }
-            function moveRight() {
-                $('.slider').animate(
-                    {
-                        left: -slideWidth * 0.8
-                    },
-                    700,
-                    function () {
-                        $('.slider li:first-child').appendTo('.slider');
-                        $('.slider').css('left', '');
-                        applySlideStyles();
-                    }
-                );
-            }
-            function applySlideStyles() {
-                $('.slider li').css({
-                    filter: 'grayscale(1)',
-                    opacity: '0.4',
-                    position: 'relative',
-                    left: '0'
-                });
-                var centerIndex = Math.floor((slideCount + 8) / 4);
-                $('.slider li').eq(centerIndex).css({
-                    filter: 'grayscale(0)',
-                    opacity: '1'
-                });
-            }
-            $('.left').click(function () {
-                moveLeft();
-            });
-            $('.right').click(function () {
-                moveRight();
-            });
-            applySlideStyles();
-        });
-    </script>
-    <script>
-        $(document).ready(function () {
-            $(window).scroll(function () {
-                var scrollValue = $(document).scrollTop();
-                console.log(scrollValue);
-            });
-        });
-    </script>
-    <script>
-        $(document).ready(function () {
-        });
-    </script>
-    <script>
         $(function ($) {
             // 로딩 페이지 보이기
             var loadingPage = $('<div class="loading_page"><div class="loading_wrap"><img class="loading_logo" src="images/loading_logo.png" alt="Loading Logo"><div class="loading_text"><img src="images/loading_text.png" alt="Loading Logo"></div></div></div>');
@@ -138,7 +69,6 @@
             }
         });
     </script>
-
     <style>
         .loading_page {
             z-index: 999999;
@@ -221,6 +151,49 @@
             });
         });
     </script>
+    <style>
+        .swiper {
+            width: 100%;
+            height:100%;
+            white-space: nowrap;
+        }
+
+        .swiper-slide {
+            box-sizing: border-box;
+            display: inline-block;
+            padding-top: 20px;
+            width: 240px !important;
+            height: 240px;
+            text-align: center !important;
+            border: 2px solid white;
+            border-radius: 400px;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        .swiper-slide img {
+            height: 120px;
+        }
+
+        .swiper-slide .m_name h1 {
+            margin-top: 5px;
+            font-size: 16.5px;
+            font-weight: 800;
+        }
+
+        .swiper-slide .m_name h2 {
+            display: inline-block;
+            margin: 2.5px auto 3px;
+            padding: 0 2.5px;
+            color: rgba(255, 255, 255, 1);
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .swiper-slide .m_name h3 {
+            font-size: 14px;
+            font-weight: 600;
+        }
+    </style>
 </head>
 
 <body oncontextmenu='return false' onselectstart='return false' ondragstart='return false'>
@@ -412,88 +385,101 @@
                                 <hr>
                                 <h1>beverage</h1>
                             </div>
-
-                            <div class="bev_list">
-                                <ul class="slider">
-                                    <li>
+                            <!-- Swiper -->
+                            <div class="swiper mySwiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
                                         <div class="m_image"><img src="images/angels_tangerine.png" alt=""></div>
                                         <div class="m_name">
                                             <h1>angels tangerine</h1>
                                             <h2 style="background-color:#ba0021;"># ba0021</h2>
                                             <h3>plumade</h3>
                                         </div>
-                                    </li>
-                                    <li>
+                                    </div>
+                                    <div class="swiper-slide">
                                         <div class="m_image"><img src="images/cherry_red.png" alt=""></div>
                                         <div class="m_name">
                                             <h1>cherry red</h1>
                                             <h2 style="background-color:#aa0a27;"># aa0a27</h2>
                                             <h3>cherry-lemonade</h3>
                                         </div>
-                                    </li>
-                                    <li>
+                                    </div>
+                                    <div class="swiper-slide">
                                         <div class="m_image"><img src="images/honey_orange.png" alt=""></div>
                                         <div class="m_name">
                                             <h1>honey orange</h1>
                                             <h2 style="color:#000; background-color:#ffbd31;"># ffbd31</h2>
                                             <h3>citron tea</h3>
                                         </div>
-                                    </li>
-                                    <li>
+                                    </div>
+                                    <div class="swiper-slide">
                                         <div class="m_image"><img src="images/crushed_ginger.png" alt=""></div>
                                         <div class="m_name">
                                             <h1>crushed ginger</h1>
                                             <h2 style="color:#000; background-color:#c6c28d;"># c6c28d</h2>
                                             <h3>ginger tea</h3>
                                         </div>
-                                    </li>
-                                    <li>
+                                    </div>
+                                    <div class="swiper-slide">
                                         <div class="m_image"><img src="images/matcha.png" alt=""></div>
                                         <div class="m_name">
                                             <h1>matcha</h1>
                                             <h2 style="background-color:#74a12e;"># 74a12e</h2>
                                             <h3>matcha latte</h3>
                                         </div>
-                                    </li>
-                                    <li>
+                                    </div>
+                                    <div class="swiper-slide">
                                         <div class="m_image"><img src="images/chocolate_malt.png" alt=""></div>
                                         <div class="m_name">
                                             <h1>chocolate malt</h1>
                                             <h2 style="background-color:#907162;"># 907162</h2>
                                             <h3>chocolate latte</h3>
                                         </div>
-                                    </li>
-                                    <li>
+                                    </div>
+                                    <div class="swiper-slide">
                                         <div class="m_image"><img src="images/strawberry_cream.png" alt=""></div>
                                         <div class="m_name">
                                             <h1>strawberry cream</h1>
                                             <h2 style="color:#000; background-color:#f4c3c4;"># f4c3c4</h2>
                                             <h3>strawberry latte</h3>
                                         </div>
-                                    </li>
-                                    <li>
+                                    </div>
+
+                                    <div class="swiper-slide">
                                         <div class="m_image"><img src="images/lemon_ciffon.png" alt=""></div>
                                         <div class="m_name">
                                             <h1>lemon ciffon</h1>
                                             <h2 style="color:#000; background-color:#fffacd;"># f4c3c4</h2>
                                             <h3>lemonade</h3>
                                         </div>
-                                    </li>
-                                    <li>
+                                    </div>
+                                    <div class="swiper-slide">
                                         <div class="m_image"><img src="images/orange_peel.png" alt=""></div>
                                         <div class="m_name">
                                             <h1>orange peel</h1>
                                             <h2 style="color:#000; background-color:#ff9f00;"># ff9f00</h2>
                                             <h3>orangeade</h3>
                                         </div>
-                                    </li>
-                                </ul>
-                                <div class="slide_control">
-                                    <button class="left"><i class="fa-solid fa-chevron-left"></i></button>
-                                    <button class="right"><i class="fa-solid fa-chevron-right"></i></button>
+                                    </div>
                                 </div>
+                                <div class="swiper-pagination"></div>
                             </div>
 
+                            <!-- Swiper JS -->
+                            <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+                            <!-- Initialize Swiper -->
+                            <script>
+                                var swiper = new Swiper(".mySwiper", {
+                                    slidesPerView: 3,
+                                    spaceBetween: 0,
+                                    centeredSlides: true,
+                                    pagination: {
+                                        el: ".swiper-pagination",
+                                        clickable: true,
+                                    },
+                                });
+                            </script>
                         </div>
 
                         <div class="dessert">
@@ -510,33 +496,21 @@
                                     </p>
                                 </div>
                                 <div class="bakery_img">
-                                    <ul>
-                                        <li><img src="images/bitter_chocolate.png" alt=""></li>
-                                        <li><img src="images/cottage_cheese.png" alt=""></li>
-                                        <li><img src="images/bistre.png" alt=""></li>
-                                        <li><img src="images/chestnut_green.png" alt=""></li>
-                                        <li><img src="images/barbados_cherry.png" alt=""></li>
-                                        <li><img src="images/butterscotch.png" alt=""></li>
-                                        <li><img src="images/black raspberry.png" alt=""></li>
-                                        <li><img src="images/chocolate_torte.png" alt=""></li>
-                                        <li><img src="images/mocaccino.png" alt=""></li>
-                                        <li><img src="images/burnt_earth.png" alt=""></li>
-                                        <li><img src="images/flour.png" alt=""></li>
-                                    </ul>
+                                    <img src="images/dessert.png" alt="">
                                 </div>
                             </div>
-                        </div>
-                        <div class="outro">
-                            <div class="v_line"></div>
-                            <div class="out_tt">enjoy your color taste!</div>
-                        </div>
+                            <div class="outro">
+                                <div class="v_line"></div>
+                                <div class="out_tt">enjoy your color taste!</div>
+                            </div>
 
+                        </div>
                     </div>
+
+                    <div class="box3"></div>
+                    <div class="box4"></div>
+
                 </div>
-
-                <div class="box3"></div>
-                <div class="box4"></div>
-
             </div>
 
             <div id="footer">
@@ -579,87 +553,47 @@
                     </div>
                 </div>
             </div>
+
         </div>
 
-    </div>
-    <script>
-        function showMap() {
-            var mapElement = document.getElementById("map");
-            mapElement.style.display = "flex";
-            setTimeout(function () {
-                mapElement.style.opacity = 1;
-            }, 10);
-        }
-
-        function hideMap() {
-            var mapElement = document.getElementById("map");
-            mapElement.style.opacity = 0;
-            setTimeout(function () {
-                mapElement.style.display = "none";
-            }, 1000);
-        }
-
-        document.addEventListener("DOMContentLoaded", function () {
-            var mapButton = document.querySelector(".map");
-            var closeButton = document.querySelector(".map_close");
-
-            mapButton.addEventListener("click", showMap);
-            closeButton.addEventListener("click", hideMap);
-        });
-    </script>
-    <script>
-        var mapButton = document.querySelector(".map");
-        mapButton.addEventListener("click", function (event) {
-            // 현재 스크롤 위치 저장
-            var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-
-            showMap(); // #map 표시
-
-            // 등장 후에 스크롤 위치 복원
-            setTimeout(function () {
-                window.scrollTo(0, scrollPosition);
-            }, 10);
-        });
-    </script>
-
-    <!-- Code injected by live-server -->
-    <script>
-        // <![CDATA[  <-- For SVG support
-        if ('WebSocket' in window) {
-            (function () {
-                function refreshCSS() {
-                    var sheets = [].slice.call(document.getElementsByTagName("link"));
-                    var head = document.getElementsByTagName("head")[0];
-                    for (var i = 0; i < sheets.length; ++i) {
-                        var elem = sheets[i];
-                        var parent = elem.parentElement || head;
-                        parent.removeChild(elem);
-                        var rel = elem.rel;
-                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+        <!-- Code injected by live-server -->
+        <script>
+            // <![CDATA[  <-- For SVG support
+            if ('WebSocket' in window) {
+                (function () {
+                    function refreshCSS() {
+                        var sheets = [].slice.call(document.getElementsByTagName("link"));
+                        var head = document.getElementsByTagName("head")[0];
+                        for (var i = 0; i < sheets.length; ++i) {
+                            var elem = sheets[i];
+                            var parent = elem.parentElement || head;
+                            parent.removeChild(elem);
+                            var rel = elem.rel;
+                            if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                                var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                                elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                            }
+                            parent.appendChild(elem);
                         }
-                        parent.appendChild(elem);
                     }
-                }
-                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-                var address = protocol + window.location.host + window.location.pathname + '/ws';
-                var socket = new WebSocket(address);
-                socket.onmessage = function (msg) {
-                    if (msg.data == 'reload') window.location.reload();
-                    else if (msg.data == 'refreshcss') refreshCSS();
-                };
-                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-                    console.log('Live reload enabled.');
-                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-                }
-            })();
-        }
-        else {
-            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-        }
+                    var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                    var address = protocol + window.location.host + window.location.pathname + '/ws';
+                    var socket = new WebSocket(address);
+                    socket.onmessage = function (msg) {
+                        if (msg.data == 'reload') window.location.reload();
+                        else if (msg.data == 'refreshcss') refreshCSS();
+                    };
+                    if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                        console.log('Live reload enabled.');
+                        sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                    }
+                })();
+            }
+            else {
+                console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+            }
 	// ]]>
-    </script>
+        </script>
 </body>
 
 </html>
